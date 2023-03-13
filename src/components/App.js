@@ -57,7 +57,7 @@ const renderFriend = () => {
   .map((quote, index) => {
     return (
       <li className="quote" key={index}> 
-        <p className="quote__quotes">{quote.quote}</p>
+        <p>{quote.quote}</p>
         <p className="quote__character"> {quote.character}</p>
       </li>
     )
@@ -99,21 +99,21 @@ const renderFriend = () => {
 
         <form className="new-quote__form">
           <h2 className="new-quote__title">Añade una nueva frase</h2>
+           <label htmlFor="quote">Frase </label>
           <input
             className="new-quote__input"
             type="text"
             name="quote"
             id="quote"
-            placeholder="Frase"
             onChange={handleInput}
             value={newQuote.quote}
           />
+          <label htmlFor="character">Personaje </label>
           <input
             className="new-character__input"
             type="text"
             name="character"
             id="character"
-            placeholder="Personaje"
             onChange={handleInput}
             value={newQuote.character}
           />
