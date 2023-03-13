@@ -1,11 +1,12 @@
 import '../styles/App.scss';
 import {useEffect, useState} from 'react';
-import quotesData from "../data/friendsData.json"; 
+/* import quotesData from "../data/friendsData.json";  */
 import callToApi from '../services/api';
+import ls from '../services/localStorage';
 
 const App = () => {
 
-const [quotes, setQuotes] = useState([]);
+const [quotes, setQuotes] = useState(ls.get('newQuote', '') || []);
 const [searchQuote, setSearchQuote] = useState('');
 const [selectCharacter, setSelectCharacter] = useState('all');
 const [newQuote, setNewQuote] = useState({
@@ -14,10 +15,17 @@ const [newQuote, setNewQuote] = useState({
 });
 
 useEffect(() => {
-    callToApi().then((response) => {
+  if(quotes.length === 0) {
+     callToApi().then((response) => {
       setQuotes(response);
     });
+    ls.set('newQuote', quotes)
+  }
   }, []); 
+
+useEffect(() => {
+      ls.set('newQuote', quotes)
+}, [quotes]);   
 
 const handleSearchQuote = (ev) => {
     setSearchQuote(ev.target.value);
