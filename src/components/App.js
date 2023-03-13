@@ -71,6 +71,7 @@ const renderFriend = () => {
         <form className="header__form">
           <label htmlFor='search'>Filtrar por frase</label>
           <input
+            className="quote__input"
             autoComplete="off"
             type="search"
             name="search"
@@ -101,7 +102,7 @@ const renderFriend = () => {
           <h2 className="new-quote__title">Añade una nueva frase</h2>
            <label htmlFor="quote">Frase </label>
           <input
-            className="new-quote__input"
+            className="quote__input"
             type="text"
             name="quote"
             id="quote"
@@ -110,7 +111,7 @@ const renderFriend = () => {
           />
           <label htmlFor="character">Personaje </label>
           <input
-            className="new-character__input"
+            className="quote__input"
             type="text"
             name="character"
             id="character"
