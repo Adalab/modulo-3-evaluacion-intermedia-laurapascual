@@ -19,7 +19,6 @@ useEffect(() => {
      callToApi().then((response) => {
       setQuotes(response);
     });
-    ls.set('newQuote', quotes)
   }
   }, []); 
 
