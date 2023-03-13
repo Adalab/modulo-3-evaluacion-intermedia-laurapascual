@@ -56,9 +56,9 @@ const renderFriend = () => {
   })  
   .map((quote, index) => {
     return (
-      <li className="quote__item" key={index}> 
+      <li className="quote" key={index}> 
         <p className="quote__quotes">{quote.quote}</p>
-        <p className="quote__author">{quote.character}</p>
+        <p className="quote__character"> {quote.character}</p>
       </li>
     )
   })
@@ -68,10 +68,9 @@ const renderFriend = () => {
     <div>
       <header>
         <h1 className="header__title">Frases de Friends</h1>
-        <form>
+        <form className="header__form">
           <label htmlFor='search'>Filtrar por frase</label>
           <input
-            className="header__search"
             autoComplete="off"
             type="search"
             name="search"
@@ -80,7 +79,6 @@ const renderFriend = () => {
           /> 
           <label htmlFor="select">Filtrar por personaje: </label>
           <select
-            className=""
             id="select"
             name="select"
             onChange={handleSelectCharacter}

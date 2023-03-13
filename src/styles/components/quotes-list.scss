@@ -1,0 +1,22 @@
+.quotes__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quote {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px greenyellow;
+    width: 400px;
+}
+
+.quote__character {
+    color: goldenrod;
+    font-weight: 900;
+}
