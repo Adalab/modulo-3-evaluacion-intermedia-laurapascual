@@ -1,1 +1,1 @@
-# React Starter Kit
+# Evaluación intermedia Laura Pascual

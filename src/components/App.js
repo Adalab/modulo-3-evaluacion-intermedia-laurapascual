@@ -5,7 +5,7 @@ import callToApi from '../services/api';
 
 const App = () => {
 
-const [quotes, setQuotes] = useState(quotesData);
+const [quotes, setQuotes] = useState([]);
 const [searchQuote, setSearchQuote] = useState('');
 const [selectCharacter, setSelectCharacter] = useState('all');
 const [newQuote, setNewQuote] = useState({
@@ -13,11 +13,11 @@ const [newQuote, setNewQuote] = useState({
   character:'',
 });
 
-/* useEffect(() => {
+useEffect(() => {
     callToApi().then((response) => {
       setQuotes(response);
     });
-  }, []); */
+  }, []); 
 
 const handleSearchQuote = (ev) => {
     setSearchQuote(ev.target.value);
