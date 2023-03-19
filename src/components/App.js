@@ -13,6 +13,7 @@ const [newQuote, setNewQuote] = useState({
   quote:'',
   character:'',
 });
+const [error, setError] = useState(false);
 
 useEffect(() => {
   if(quotes.length === 0) {
@@ -42,11 +43,13 @@ const handleInput = (ev) => {
 
 const handleAddQuote = (ev) => {
   ev.preventDefault();
-  setQuotes([...quotes,newQuote]);
-  setNewQuote({
-  quote:'',
-  character:'',
-})
+  if(!(newQuote.quote === '' || newQuote.character === '')) {
+    setQuotes([...quotes,newQuote]);
+    setError(false);
+    setNewQuote({
+    quote:'',
+    character:'',
+    })} else { setError(true) }
 } 
 
 const renderFriend = () => {
@@ -126,6 +129,7 @@ const renderFriend = () => {
             value={newQuote.character}
           />
           <input className="new-quote__btn" type="submit" value="Añadir una nueva frase" onClick={handleAddQuote}/>
+          {error && <p>Faltan datos por rellenar</p>}
         </form> 
       </main>
     </div>
