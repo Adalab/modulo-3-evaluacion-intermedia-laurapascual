@@ -1,8 +1,8 @@
 import '../styles/App.scss';
 import {useEffect, useState} from 'react';
-/* import quotesData from "../data/friendsData.json";  */
 import callToApi from '../services/api';
 import ls from '../services/localStorage';
+import friends from '../images/friends.jpg';
 
 const App = () => {
 
@@ -76,8 +76,9 @@ const renderFriend = () => {
 
   return (
     <div>
-      <header>
+      <header className='header'>
         <h1 className="header__title">Frases de Friends</h1>
+        <img src={friends} alt='Friends' className="header__image"></img>
         <form className="header__form">
           <label htmlFor='search'>Filtrar por frase</label>
           <input

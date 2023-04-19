@@ -13,11 +13,13 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    border: solid 1px greenyellow;
+    border: solid 2px #2a3a88;
+    border-radius: 5px;
     width: 400px;
+    padding: 5px;
 }
 
 .quote__character {
-    color: goldenrod;
+    color: #f1b942;
     font-weight: 900;
 }
